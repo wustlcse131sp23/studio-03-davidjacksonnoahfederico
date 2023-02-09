@@ -13,7 +13,7 @@ public class Sieve {
 		int n = in.nextInt();
 		boolean[] sieve = new boolean[n + 1];
 		//int[] sieve = new int[n];
-		for(int i = 1; i <= sqrt(sieve.length); i++)
+		for(int i = 2; i <= sieve.length-1; i++)
 		{
 			sieve[i] = true;
 		}
@@ -21,9 +21,7 @@ public class Sieve {
 
 		for(int k = 2; k < sieve.length/2; k++)
 		{
-
-
-			for(int j = k/2; j <= sieve.length-1; j += k)
+			for(int j = k * 2; j < sieve.length; j += k)
 			{
 				sieve[j] = false;
 			}
@@ -34,15 +32,13 @@ public class Sieve {
 		{
 			if(sieve[z])
 			{
-			System.out.print(z);
+			System.out.println(z);
 			}
 		}
 
 	}
 
-	private static int sqrt(int n) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+
+	
 
 }
